@@ -93,8 +93,8 @@ with open('accuracy-SLPSO.csv', mode = 'r')as file:
 plt.plot(generationList, accList, label = 'SS-PSO')
 plt.plot(SLGens, SLaccList, label = 'SL-PSO')
 plt.xlabel('Generation')
-plt.ylabel('Accuracy')
-plt.title('Accuracy vs. Generation')
+plt.ylabel('Accuracy (%)')
+plt.title('Training accuracy vs. Generation')
 plt.legend()
 plt.show()
 
@@ -108,8 +108,8 @@ colours = ['blue', 'orange']
 
 plt.bar(Names, Scores, color = colours)
 plt.xlabel('Optimisers')
-plt.ylabel('Score (%)')
-plt.title('Optimiser score on unseen Test Set')
+plt.ylabel('Accuracy (%)')
+plt.title('Test set accuracy')
 plt.show()
 
 
