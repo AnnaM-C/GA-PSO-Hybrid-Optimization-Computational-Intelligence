@@ -13,11 +13,11 @@ def plot_NSGA_vs_SGD(NSGA_file, SGD_file):
     SGD_max_accuracy_column=df_SGD["accuracy"]
 
     plt.plot(range(99), SGD_max_accuracy_column, label='SGD')
-    plt.plot(range(100), NSGA_max_accuracy_column, label="NSGA2")
+    plt.plot(range(100), NSGA_max_accuracy_column, label="NSGA-II")
 
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
-    plt.title('Comparison of NSGA vs SGD Max Accuracy over Epochs')
+    plt.title('Comparison of NSGA-II vs SGD Accuracy over Epochs')
 
     plt.legend()
     plt.show()
