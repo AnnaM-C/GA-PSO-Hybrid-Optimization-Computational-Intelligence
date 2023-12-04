@@ -60,7 +60,7 @@ with open('accuracyTrack-040.csv', mode = 'r')as file:
         accList.append(float(i))
 
 
-print(accList)
+#print(accList)
 
 plt.plot(generationList, accList, label = 'Accuracy')
 plt.xlabel('Generation')
@@ -68,4 +68,57 @@ plt.ylabel('Accuracy')
 plt.title('Accuracy vs. Generation')
 plt.legend()
 plt.show()
+
+
+SGDAcc = []
+SGDGen = []
+
+
+with open('SDG_training.csv', mode = 'r')as file:
+    reader = csv.DictReader(file)
+
+    # column_values = [row['accuracy'] for row in reader]
+
+    SGDAcc.append([row['accuracy'] for row in reader])
+
+    # # row = list(reader)
+
+    # for i in row['accuracy']:
+    #     SGDAcc.append(float(i))
+
+
+SGDAcc = SGDAcc[0]
+SGDAcc = [float(value) for value in SGDAcc]
+print(SGDAcc)
+
+
+with open('SDG_training.csv', mode = 'r')as file:
+    reader = csv.DictReader(file)
+
+    # column_values = [row['accuracy'] for row in reader]
+
+    SGDGen.append([row['nepochs'] for row in reader])
+
+
+SGDGen = SGDGen[0]
+SGDGen = [int(value) for value in SGDGen]
+print(SGDGen)
+
+plt.plot(generationList, accList, label = 'Accuracy')
+plt.plot(SGDGen, SGDAcc, label = 'Accuracy')
+plt.xlabel('Generation')
+plt.ylabel('Accuracy')
+plt.title('Accuracy vs. Generation')
+plt.legend()
+plt.show()
+
+
+# plt.plot(generationList, accList, label = 'Accuracy')
+# plt.xlabel('Generation')
+# plt.ylabel('Accuracy')
+# plt.title('Accuracy vs. Generation')
+# plt.legend()
+# plt.show()
+
+
 
