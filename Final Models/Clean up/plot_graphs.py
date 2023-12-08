@@ -90,9 +90,9 @@ def plot_big_sigma_vs_small_sigma(SSPSO_big_sigma_file, SSPSO_small_sigma_file):
 if __name__ == "__main__":
     # We have create a seperate notebook for the optimisers to produce
     # the below csv
-    NSGA_file               = "training_log_NSGA_1bounds2.csv"
+    NSGA_file               = "training_log_NSGA.csv"
     GA_file                 = "evolution_stats.csv"
-    SLPSO_file              = "SLPSOLogbookNE.csv"
+    SLPSO_file              = "SLPSOLogbook.csv"
     SSPSO_big_sigma_file    = "bigSigmaSSPSOLogbook.csv"
     SSPSO_small_sigma_file  = "smallSigmaSSPSOLogbook.csv"
 
