@@ -4,23 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
-def plot_NSGA_vs_SGD(NSGA_file, SGD_file):
-    df_NSGA=pd.read_csv(NSGA_file)
-    NSGA_max_accuracy_column=df_NSGA["max"]
-
-    df_SGD=pd.read_csv(SGD_file)
-    SGD_max_accuracy_column=df_SGD["max"]
-
-
-    plt.plot(range(100), NSGA_max_accuracy_column, label="NSGA II Maximum")
-    plt.plot(range(100), SGD_max_accuracy_column, label="SGD Max")
-
-    plt.xlabel('Generations')
-    plt.ylabel('Maximum Accuracy')
-    plt.title('Comparison of NSGA II vs SGD Maximum Accuracy')
-
-    plt.legend()
-    plt.show()
 
 def plot_NSGA_vs_GA(NSGA_file, GA_file):
     df_NSGA=pd.read_csv(NSGA_file)
@@ -105,17 +88,16 @@ def plot_big_sigma_vs_small_sigma(SSPSO_big_sigma_file, SSPSO_small_sigma_file):
     plt.show()
 
 if __name__ == "__main__":
-    NSGA_file   = "Final Models/NSGA2/training_log_NSGA_1bounds2.csv"
-    SGD         = "SSPSO/accuracyTrack-070.csv"
-    GA_file     = "GA/evolution_stats.csv"
-    SSPSO_file  = "Final Models/SSPSO/0-SSPSO/bestLogbookNE.csv"
-    SLPSO_file  = "CW/computational-intelligence/Final Models/SLPSO/0-SLPSO/bestLogbookNE.csv"
-    
-    # plot_NSGA_vs_SGD(NSGA_file, NSGA_file)
-    # plot_NSGA_vs_GA(NSGA_file, GA_file)
-    # plot_NSGA_vs_SSPSO(NSGA_file, SSPSO_file)
-    # plot_GA_vs_SLPSO(GA_file, SLPSO_file)
-    SSPSO_big_sigma_file     = "Final Models/SSPSO/0-SSPSO new sigma/bestLogbookNE.csv"
-    SSPSO_small_sigma_file   = "CW/computational-intelligence/Final Models/SSPSO/0-SSPSO/bestLogbookNE.csv"
+    # We have create a seperate notebook for the optimisers to produce
+    # the below csv
+    NSGA_file               = "training_log_NSGA_1bounds2.csv"
+    GA_file                 = "evolution_stats.csv"
+    SLPSO_file              = "SLPSOLogbookNE.csv"
+    SSPSO_big_sigma_file    = "bigSigmaSSPSOLogbook.csv"
+    SSPSO_small_sigma_file  = "smallSigmaSSPSOLogbook.csv"
+
+    plot_NSGA_vs_GA(NSGA_file, GA_file)
+    plot_NSGA_vs_SSPSO(NSGA_file, SSPSO_small_sigma_file)
+    plot_GA_vs_SLPSO(GA_file, SLPSO_file)
     plot_big_sigma_vs_small_sigma(SSPSO_big_sigma_file, SSPSO_small_sigma_file)
 
