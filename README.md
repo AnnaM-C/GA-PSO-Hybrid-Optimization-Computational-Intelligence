@@ -2,6 +2,7 @@
 
 ## Project Overview
 Our project focuses on enhancing neural network optimization using an innovative hybrid algorithm combining Genetic Algorithms (GA) and Particle Swarm Optimization (PSO).
+[Comparing Population-Based Algorithms to Fine-Tune a CNN for Image Classification Report](https://github.com/AnnaM-C/computational-intelligence/blob/main/Comparing%20Population-Based%20Algorithms%20to%20Fine-Tune%20a%20CNN%20for%20Image%20Classification.pdf)
 
 ## Contribution Highlights
 - SSPSO Development: We created the Social Snake Particle Swarm Optimization (SSPSO) algorithm. SSPSO addresses premature convergence in standard PSO by introducing a new mutation probability calculation. Particles closer to the best particle have a higher mutation probability, enabling escape from local minima.
